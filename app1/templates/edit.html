@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is about page</h1>
+
+    <a href="{% url 'home' %}">Go to home</a>
+    {% for i in sdata %}
+    <form action="{% url 'updatestudents' id=i.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Enter name</label>
+        <input placeholder="Name" name="name" type="text" value="{{ i.name }}">
+        <label>Enter Roll no</label>
+        <input placeholder="Roll no" name="rollno" type="number" value="{{ i.rollno }}" >
+        <input type="submit">
+    </form>
+    {% endfor %}
+
+</body>
+</html>

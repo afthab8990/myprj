@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'studentsession' %}">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="rollno">Roll No:</label>
+            <input type="text" id="rollno" name="rollno" required>
+            <br>
+            <button type="submit">Login</button>
+          </form>
+          {% if msg %}
+            <p style="color: red;">{{ msg }}</p>
+          {% endif %}
+    </form>
+    
+</body>
+</html>

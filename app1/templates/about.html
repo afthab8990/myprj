@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This Edit students</h1>
+    <a href="{% url 'home' %}">Go to home</a>
+    <form action="{% url 'addstudent' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Enter name</label>
+        <input placeholder="Name" name="name" type="text">
+        <label>Enter Roll no</label>
+        <input placeholder="Roll no" name="rollno" type="number">
+        <input type="submit">
+    </form>
+    <!-- git init
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/afthab8990/myprj.git
+    git push -u origin main -->
+</body>
+</html>

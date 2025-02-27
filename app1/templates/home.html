@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{ ses }}</h1>
+    <a type="button" href="{% url 'logout' %}">Logout</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Roll no</th>
+        </tr>
+        {% for s in sdata %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.rollno }}</td>
+            <td><a href="{% url 'editstudents' id=s.id %}">Edit</a></td>
+            <td><a href="{% url 'deletestudents' id=s.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            {% for i in numbers %}
+            <td>{{ i }}</td>
+            {%endfor%}
+        </tr>
+
+    </table>
+
+</body>
+</html>
